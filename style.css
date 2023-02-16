@@ -2,6 +2,7 @@ body {
   background-image: url(https://bestanimations.com/media/burning-hearts/673825447heart-pink-flame-animation59.gif);
   background-repeat: no-repeat;
   background-size: cover;
+  background-position: center center;
   height: 100vh;
 }
 .heart {
