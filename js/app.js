@@ -3,6 +3,8 @@ const elHeartTwo = elHeart.querySelector(".heartikki");
 const elHeartThree = elHeart.querySelector(".heartuch");
 const elInputNameIts = document.querySelector(".js-form-name-its");
 const elInputNameHim = document.querySelector(".js-form-name-him");
+
+
 const elBtn = document.querySelector(".btn");
 let style = document.createElement("style");
 elBtn.addEventListener("click", () => {
@@ -46,4 +48,16 @@ elBtn.addEventListener("click", () => {
   document.querySelector(".js-foiz-love").textContent = `${randomNumber}%`;
   document.querySelector(".js-user-love-name").textContent =
     elInputNameHimValue;
+  fetch("http://localhost:3000/posts", {
+    method: "POST",
+    headers: {
+      "Content-Type": "application/json",
+    },
+    body: JSON.stringify({
+      qiz: elInputNameItsValue,
+      bola: elInputNameHimValue,
+    }),
+  })
+    .then((res) => res.json())
+    .then((data) => console.log(data));
 });
